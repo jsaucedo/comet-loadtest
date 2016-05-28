@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jmeterTestPlan version="1.2" properties="2.3" jmeter="2.8.20130705">
+<jmeterTestPlan version="1.2" properties="2.9" jmeter="3.0 r1743807">
   <hashTree>
     <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Comet - Buscar Proyecto" enabled="true">
       <stringProp name="TestPlan.comments"></stringProp>
@@ -31,8 +31,8 @@
           <boolProp name="LoopController.continue_forever">false</boolProp>
           <stringProp name="LoopController.loops">1</stringProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">1</stringProp>
-        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <stringProp name="ThreadGroup.num_threads">100</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">2</stringProp>
         <longProp name="ThreadGroup.start_time">1363247040000</longProp>
         <longProp name="ThreadGroup.end_time">1363247040000</longProp>
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
@@ -40,7 +40,7 @@
         <stringProp name="ThreadGroup.delay">0</stringProp>
       </ThreadGroup>
       <hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/projects/1/channels/" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/projects/1/channels/" enabled="false">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments"/>
           </elementProp>
@@ -73,10 +73,6 @@
                 <stringProp name="Header.name">User-Agent</stringProp>
                 <stringProp name="Header.value">Mozilla/5.0(X11;Linuxx86_64)AppleWebKit/537.36(KHTML,likeGecko)Chrome/45.0.2454.101Safari/537.36</stringProp>
               </elementProp>
-              <elementProp name="Authorization" elementType="Header">
-                <stringProp name="Header.name">Authorization</stringProp>
-                <stringProp name="Header.value">BearereyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJfaWQiOjEwMDYsImVtYWlsIjoiYWxhbnJvc3NpOTJAaG90bWFpbC5jb20iLCJhbGlhcyI6IkFsYW5SIiwiZXhwIjoxNDY1ODMxMzQzLCJpYXQiOjE0NjMyMzkzNDN9.gSNHq20l9oIx4qVHX5_nuavLfrK7kWRvvUxC6dI_KUI</stringProp>
-              </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
                 <stringProp name="Header.value">https://localhost:4000/</stringProp>
@@ -98,7 +94,7 @@
           </UniformRandomTimer>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/search/projects/1/users/?q=test" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/search/projects/44/users/?q=test" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments"/>
           </elementProp>
@@ -108,7 +104,7 @@
           <stringProp name="HTTPSampler.response_timeout"></stringProp>
           <stringProp name="HTTPSampler.protocol"></stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">search/projects/1/users/?q=test</stringProp>
+          <stringProp name="HTTPSampler.path">search/projects/44/users/?q=test</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -130,10 +126,6 @@
               <elementProp name="User-Agent" elementType="Header">
                 <stringProp name="Header.name">User-Agent</stringProp>
                 <stringProp name="Header.value">Mozilla/5.0(X11;Linuxx86_64)AppleWebKit/537.36(KHTML,likeGecko)Chrome/45.0.2454.101Safari/537.36</stringProp>
-              </elementProp>
-              <elementProp name="Authorization" elementType="Header">
-                <stringProp name="Header.name">Authorization</stringProp>
-                <stringProp name="Header.value">BearereyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJfaWQiOjEwMDYsImVtYWlsIjoiYWxhbnJvc3NpOTJAaG90bWFpbC5jb20iLCJhbGlhcyI6IkFsYW5SIiwiZXhwIjoxNDY1ODMxMzQzLCJpYXQiOjE0NjMyMzkzNDN9.gSNHq20l9oIx4qVHX5_nuavLfrK7kWRvvUxC6dI_KUI</stringProp>
               </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
@@ -156,7 +148,7 @@
           </UniformRandomTimer>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/search/projects/1/messages/?q=test" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/search/projects/44/messages/?q=test" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments"/>
           </elementProp>
@@ -166,7 +158,7 @@
           <stringProp name="HTTPSampler.response_timeout"></stringProp>
           <stringProp name="HTTPSampler.protocol"></stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">search/projects/1/messages/?q=test</stringProp>
+          <stringProp name="HTTPSampler.path">search/projects/44/messages/?q=test</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -188,10 +180,6 @@
               <elementProp name="User-Agent" elementType="Header">
                 <stringProp name="Header.name">User-Agent</stringProp>
                 <stringProp name="Header.value">Mozilla/5.0(X11;Linuxx86_64)AppleWebKit/537.36(KHTML,likeGecko)Chrome/45.0.2454.101Safari/537.36</stringProp>
-              </elementProp>
-              <elementProp name="Authorization" elementType="Header">
-                <stringProp name="Header.name">Authorization</stringProp>
-                <stringProp name="Header.value">BearereyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJfaWQiOjEwMDYsImVtYWlsIjoiYWxhbnJvc3NpOTJAaG90bWFpbC5jb20iLCJhbGlhcyI6IkFsYW5SIiwiZXhwIjoxNDY1ODMxMzQzLCJpYXQiOjE0NjMyMzkzNDN9.gSNHq20l9oIx4qVHX5_nuavLfrK7kWRvvUxC6dI_KUI</stringProp>
               </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
@@ -214,7 +202,7 @@
           </UniformRandomTimer>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/search/projects/1/messages/?q=test&amp;in_direct=true" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/search/projects/44/messages/?q=test" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments"/>
           </elementProp>
@@ -224,7 +212,7 @@
           <stringProp name="HTTPSampler.response_timeout"></stringProp>
           <stringProp name="HTTPSampler.protocol"></stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">search/projects/1/messages/?q=test&amp;in_direct=true</stringProp>
+          <stringProp name="HTTPSampler.path">search/projects/44/messages/?q=test</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -246,10 +234,6 @@
               <elementProp name="User-Agent" elementType="Header">
                 <stringProp name="Header.name">User-Agent</stringProp>
                 <stringProp name="Header.value">Mozilla/5.0(X11;Linuxx86_64)AppleWebKit/537.36(KHTML,likeGecko)Chrome/45.0.2454.101Safari/537.36</stringProp>
-              </elementProp>
-              <elementProp name="Authorization" elementType="Header">
-                <stringProp name="Header.name">Authorization</stringProp>
-                <stringProp name="Header.value">BearereyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJfaWQiOjEwMDYsImVtYWlsIjoiYWxhbnJvc3NpOTJAaG90bWFpbC5jb20iLCJhbGlhcyI6IkFsYW5SIiwiZXhwIjoxNDY1ODMxMzQzLCJpYXQiOjE0NjMyMzkzNDN9.gSNHq20l9oIx4qVHX5_nuavLfrK7kWRvvUxC6dI_KUI</stringProp>
               </elementProp>
               <elementProp name="Referer" elementType="Header">
                 <stringProp name="Header.name">Referer</stringProp>
@@ -277,8 +261,8 @@
         <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
           <collectionProp name="Arguments.arguments"/>
         </elementProp>
-        <stringProp name="HTTPSampler.domain">localhost</stringProp>
-        <stringProp name="HTTPSampler.port">4001</stringProp>
+        <stringProp name="HTTPSampler.domain">192.168.0.48</stringProp>
+        <stringProp name="HTTPSampler.port">4002</stringProp>
         <stringProp name="HTTPSampler.connect_timeout"></stringProp>
         <stringProp name="HTTPSampler.response_timeout"></stringProp>
         <stringProp name="HTTPSampler.protocol"></stringProp>
@@ -291,10 +275,78 @@
         <collectionProp name="HeaderManager.headers">
           <elementProp name="" elementType="Header">
             <stringProp name="Header.name">Authorization</stringProp>
-            <stringProp name="Header.value">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJfaWQiOjEwMDYsImVtYWlsIjoiYWxhbnJvc3NpOTJAaG90bWFpbC5jb20iLCJhbGlhcyI6IkFsYW5SIiwiZXhwIjoxNDY2NDM2NTEzLCJpYXQiOjE0NjM4NDQ1MTN9.fgR_Iejhj8bpjuzt1nsqFWx2fjM7Fo16Ak4jW6NjOxI</stringProp>
+            <stringProp name="Header.value">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJfaWQiOjIsImVtYWlsIjoidGVzdHVzZXIyQHRlc3QuY29tIiwiYWxpYXMiOiJ0ZXN0dXNlciAyIiwiZXhwIjoxNDY3MDQzODQyLCJpYXQiOjE0NjQ0NTE4NDJ9.YN9d1HM01JSAUILi7QK8ORS2ESCnfNqObM4Y_8F7guk</stringProp>
           </elementProp>
         </collectionProp>
       </HeaderManager>
+      <hashTree/>
+      <ResultCollector guiclass="TableVisualizer" testclass="ResultCollector" testname="View Results in Table" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
       <hashTree/>
     </hashTree>
   </hashTree>
